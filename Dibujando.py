@@ -1,7 +1,7 @@
-from turtle import *
+import turtle #Se importó la librería turtle de manera específica para poder usar el método circle que ya tiene
+from turtle import * 
 from freegames import vector
 
-#Prueba Git
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -24,7 +24,14 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x,start.y)
+    radio = end.x - start.x #Se establece que el radio del círculo será la distancia entre los dos clicks 
+    down()
+    begin_fill() 
+    turtle.circle(radio) #Dibuja el círculo utilizando el radio como parámetro
+    end_fill()
+    
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
@@ -40,7 +47,6 @@ def rectangle(start, end):
         left(90)
         forward(width)
         left(90)
-
 
     end_fill()
 
@@ -83,6 +89,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('yellow'), 'Y') #Se agregó el color amarillo y se representa por medio de la letra Y 
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
