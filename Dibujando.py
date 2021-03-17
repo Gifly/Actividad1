@@ -2,7 +2,6 @@ import turtle #Se importó la librería turtle de manera específica para poder 
 from turtle import * 
 from freegames import vector
 
-
 def line(start, end):
     "Draw line from start to end."
     up()
@@ -48,7 +47,6 @@ def rectangle(start, end):
         left(90)
         forward(width)
         left(90)
-        
 
     end_fill()
 
