@@ -28,11 +28,34 @@ def circle(start, end):
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    lenght = end.x - start.x #Se establece el largo del rectángulo con las coordenadas en x del primer y segundo click
+    width = end.y - start.y #Se establece el ancho del rectángulo con las coordenadas en y del primer y segundo click
+    down()
+    begin_fill()
+
+    for count in range(2): #Bucle de dos repeticiones que dibuja el rectángulo según el largo y ancho acordado
+        forward(lenght)
+        left(90)
+        forward(width)
+        left(90)
+
+
+    end_fill()
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(3): #Al ser un triángulo se tiene que asegurar que con 3 ángulos se sume el recorrido de 360 grados por lo que se repite 3 veces y cada vuelta es de 120 grados
+        forward(end.x - start.x)
+        left(120)
+
+    end_fill()
 
 def tap(x, y):
     "Store starting point or draw shape."
